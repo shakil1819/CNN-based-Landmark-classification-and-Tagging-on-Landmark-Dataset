@@ -38,7 +38,7 @@ def setup_env():
     os.makedirs("checkpoints", exist_ok=True)
     
     # Make sure we can reach the installed binaries. This is needed for the workspace
-    if os.path.exists("/data/DLND/C2/landmark_images"):
+    if os.path.exists("/workspace/CNN-based-Landmark-classification-and-Tagging-on-Landmark-Dataset/data/DLND/C2/landmark_images"):
         os.environ['PATH'] = f"{os.environ['PATH']}:/root/.local/bin"
 
 
@@ -47,10 +47,10 @@ def get_data_location():
     Find the location of the dataset, either locally or in the Udacity workspace
     """
 
-    if os.path.exists("landmark_images"):
-        data_folder = "landmark_images"
-    elif os.path.exists("/data/DLND/C2/landmark_images"):
-        data_folder = "/data/DLND/C2/landmark_images"
+    if os.path.exists("/workspace/CNN-based-Landmark-classification-and-Tagging-on-Landmark-Dataset/landmark_images"):
+        data_folder = "/workspace/CNN-based-Landmark-classification-and-Tagging-on-Landmark-Dataset/landmark_images"
+    elif os.path.exists("/workspace/CNN-based-Landmark-classification-and-Tagging-on-Landmark-Dataset/data/DLND/C2/landmark_images"):
+        data_folder = "/workspace/CNN-based-Landmark-classification-and-Tagging-on-Landmark-Dataset/data/DLND/C2/landmark_images"
     else:
         raise IOError("Please download the dataset first")
 
